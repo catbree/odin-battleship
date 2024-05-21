@@ -13,7 +13,8 @@ export default [
   },
   {
     "env": {
-      "jest/globals": true
+      "jest/globals": true,
+      "jest": true,
     }
   },
   pluginJs.configs.recommended,
