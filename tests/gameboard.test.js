@@ -8,6 +8,7 @@ test('place a ship', () => {
     expect(gameboard.cells[4][4].shipPlaced).toBe(true);
     expect(gameboard.cells[5][4].shipPlaced).toBe(true);
     expect(gameboard.cells[4][5].shipPlaced).toBe(false);
+    expect(gameboard.cells[6][4].shipPlaced).toBe(false);
 });
 
 test('place a ship too far right', () => {
