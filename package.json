@@ -12,7 +12,7 @@
   "scripts": {
     "test": "jest",
     "watch": "jest --watch *.js",
-    "start": "http-server ."
+    "start": "http-server . -c-1"
   },
   "type": "module",
   "jest": {

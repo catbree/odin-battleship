@@ -1,8 +1,13 @@
 import { Gameboard } from "./gameboard.js"
 import { Ship } from "./ship.js"
 import { Player } from "./player.js"
+import { init } from "./domController.js"
 
-console.log(`hello world`);
+document.addEventListener('DOMContentLoaded', init);
+
+
+console.log(`hello world???`);
+console.log("all the way here");
 
 // function startGame() {
 //     const player1 = new Player('Player','player');
@@ -21,3 +26,4 @@ console.log(`hello world`);
 //     player2.gameboard.placeShip(new Ship(4), [2, 5]);
 //     player2.gameboard.placeShip(new Ship(5), [0, 4]);
 // }
+
