@@ -7,8 +7,8 @@ export function init() {
     const p2Gameboard = document.querySelector(".gameboard-container.player2")
     createGameboard(p1Gameboard);
     createGameboard(p2Gameboard);
-    updateGameboard(player1);
-    updateGameboard(player2);
+    updateGameboard(player1, p1Gameboard);
+    updateGameboard(player2, p2Gameboard);
 
 }
 
@@ -20,21 +20,20 @@ function createGameboard(gameboard) {
             cell.className = 'cell';
             
             //add custom attribute for subsequent linking to its js equivalent
-            cell.dataset.x = i; 
-            cell.dataset.y = j;
+            cell.dataset.x = j; 
+            cell.dataset.y = i;
 
             gameboard.appendChild(cell);
         }
     }
 }
 
-export function updateGameboard(player) {
-    const cellsElem = document.querySelectorAll('.cell');
+export function updateGameboard(player, gameboardElem) {
+    const cellsElem = gameboardElem.querySelectorAll('.cell');
     
     cellsElem.forEach((cellElem) => {
         const x = parseInt(cellElem.dataset.x);
         const y = parseInt(cellElem.dataset.y);
-        console.log(x,y);
         const cell = player.gameboard.cells[x][y];
 
 
@@ -51,3 +50,5 @@ export function updateGameboard(player) {
         }
     })
 }
+
+

@@ -12,7 +12,8 @@ body {
 .game-container {
     display: grid;
     grid-template-columns: 324px 324px;
-    gap: 32px;
+    row-gap: 40px;
+    column-gap: 64px;
     justify-content: center;
     justify-items: center;
 }
@@ -31,16 +32,34 @@ p.instruction-container {
 .gameboard-container {
     display: flex;
     flex-wrap: wrap;
-    height: 320px;
-    width: 320px;
-    border: 2px solid lightblue;
+    height: 340px;
+    width: 340px;
+    gap: 2px;
 }
 
 .cell {
-    border: 1px solid lightblue;
+    border: 0.5px solid lightgray;
     box-sizing: border-box;
     height: 32px;
     width: 32px;
+    border-radius: 4px;
+}
+
+.cell.ship {
+    background-color: lightblue;
+}
+
+.cell.ship.hit {
+    background-color: red;
+}
+
+.cell.hit {
+    background-color: gray;
+}
+
+.cell:hover {
+    background-color: lightgray;
+    cursor: pointer;
 }
 
 .player-name {

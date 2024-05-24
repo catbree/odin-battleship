@@ -6,8 +6,8 @@ test('place a ship', () => {
     const ship2 = new Ship(2);
     gameboard.placeShip(ship2, [4, 4]);
     expect(gameboard.cells[4][4].shipPlaced).toBe(true);
-    expect(gameboard.cells[5][4].shipPlaced).toBe(true);
-    expect(gameboard.cells[4][5].shipPlaced).toBe(false);
+    expect(gameboard.cells[5][4].shipPlaced).toBe(false);
+    expect(gameboard.cells[4][5].shipPlaced).toBe(true);
     expect(gameboard.cells[6][4].shipPlaced).toBe(false);
 });
 
@@ -38,7 +38,7 @@ test('check that all ships are sunk', () => {
     const ship2 = new Ship(2);
     gameboard.placeShip(ship2, [4, 4]);
     gameboard.receiveAttack([4, 4]);
-    gameboard.receiveAttack([5, 4]);
+    gameboard.receiveAttack([4, 5]);
     expect(gameboard.checkIfAllShipsSunk()).toBe(true);
     
 });
@@ -48,8 +48,8 @@ test('check that not all ships are sunk', () => {
     const ship2 = new Ship(2);
     gameboard.placeShip(ship2, [4, 4]);
     gameboard.receiveAttack([4, 4]);
-    expect(gameboard.cells[5][4].shipPlaced).toBe(true);
-    expect(gameboard.cells[5][4].isHit).toBe(false);
+    expect(gameboard.cells[4][5].shipPlaced).toBe(true);
+    expect(gameboard.cells[4][5].isHit).toBe(false);
     expect(gameboard.checkIfAllShipsSunk()).toBe(false);
     
 });

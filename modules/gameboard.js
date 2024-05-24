@@ -5,10 +5,10 @@ export class Gameboard {
 
     placeShip(ship, startCoord) {
         const [startX, startY] = startCoord;  
-        if (startX < (10 - ship.length)) {
+        if (startY <= (10 - ship.length)) {
             for (let i=0; i < ship.length; i++) {
-                this.cells[startX + i][startY].shipPlaced = true;
-                this.cells[startX + i][startY].shipId = ship;
+                this.cells[startX][startY + i].shipPlaced = true;
+                this.cells[startX][startY + i].shipId = ship;
             }
         }
     }
@@ -16,7 +16,7 @@ export class Gameboard {
     receiveAttack(coord) {
         const [x, y] = coord;
         this.cells[x][y].isHit = true;
-        if (this.cells[x][y].shipPlaced = true) {
+        if (this.cells[x][y].shipPlaced == true) {
             this.cells[x][y].shipId.hit();
         }
     }
