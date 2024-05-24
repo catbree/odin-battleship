@@ -11,18 +11,28 @@ export const p1Gameboard = document.querySelector(".gameboard-container.player1"
 export const p2Gameboard = document.querySelector(".gameboard-container.player2")
 
 
-//place ships for both players
-player1.gameboard.placeShipY(new Ship(2), [5, 0]);
-player1.gameboard.placeShipX(new Ship(2), [1, 2]);
-player1.gameboard.placeShipY(new Ship(3), [6, 4]);
-player1.gameboard.placeShipY(new Ship(4), [2, 6]);
-player1.gameboard.placeShipY(new Ship(5), [0, 4]);
+//place ships for both players randomly
+// player1.gameboard.placeShipY(new Ship(2), [5, 0]);
+// player1.gameboard.placeShipX(new Ship(2), [1, 2]);
+// player1.gameboard.placeShipY(new Ship(3), [6, 4]);
+// player1.gameboard.placeShipY(new Ship(4), [2, 6]);
+// player1.gameboard.placeShipY(new Ship(5), [0, 4]);
+player1.gameboard.randomlyPlaceShip(new Ship(2));
+player1.gameboard.randomlyPlaceShip(new Ship(2));
+player1.gameboard.randomlyPlaceShip(new Ship(3));
+player1.gameboard.randomlyPlaceShip(new Ship(4));
+player1.gameboard.randomlyPlaceShip(new Ship(5));
 
-player2.gameboard.placeShipY(new Ship(2), [3, 0]);
-player2.gameboard.placeShipY(new Ship(2), [8, 3]);
-player2.gameboard.placeShipY(new Ship(3), [6, 4]);
-player2.gameboard.placeShipY(new Ship(4), [2, 6]);
-player2.gameboard.placeShipY(new Ship(5), [4, 4]);
+// player2.gameboard.placeShipY(new Ship(2), [3, 0]);
+// player2.gameboard.placeShipY(new Ship(2), [8, 3]);
+// player2.gameboard.placeShipY(new Ship(3), [6, 4]);
+// player2.gameboard.placeShipY(new Ship(4), [2, 6]);
+// player2.gameboard.placeShipY(new Ship(5), [4, 4]);
+player2.gameboard.randomlyPlaceShip(new Ship(2));
+player2.gameboard.randomlyPlaceShip(new Ship(2));
+player2.gameboard.randomlyPlaceShip(new Ship(3));
+player2.gameboard.randomlyPlaceShip(new Ship(4));
+player2.gameboard.randomlyPlaceShip(new Ship(5));
 
 //initialise player1 as starting player
 let currentPlayer = player1;
