@@ -4,7 +4,7 @@ import { Ship } from "../modules/ship.js"
 test('place a ship', () => {
     const gameboard = new Gameboard();
     const ship2 = new Ship(2);
-    gameboard.placeShip(ship2, [4, 4]);
+    gameboard.placeShipY(ship2, [4, 4]);
     expect(gameboard.cells[4][4].shipPlaced).toBe(true);
     expect(gameboard.cells[5][4].shipPlaced).toBe(false);
     expect(gameboard.cells[4][5].shipPlaced).toBe(true);
@@ -14,14 +14,14 @@ test('place a ship', () => {
 test('place a ship too far right', () => {
     const gameboard = new Gameboard();
     const ship2 = new Ship(2);
-    gameboard.placeShip(ship2, [9, 9]);
+    gameboard.placeShipY(ship2, [9, 9]);
     expect(gameboard.cells[9][9].shipPlaced).toBe(false);
 });
 
 test('cell received attack and marked as hit', () => {
     const gameboard = new Gameboard();
     const ship2 = new Ship(2);
-    gameboard.placeShip(ship2, [4, 4]);
+    gameboard.placeShipY(ship2, [4, 4]);
     expect(gameboard.cells[4][4].isHit).toBe(false);
     expect(gameboard.cells[4][4].shipPlaced).toBe(true);
     expect(gameboard.cells[4][4].shipId).toBe(ship2);
@@ -36,7 +36,7 @@ test('cell received attack and marked as hit', () => {
 test('check that all ships are sunk', () => {
     const gameboard = new Gameboard();
     const ship2 = new Ship(2);
-    gameboard.placeShip(ship2, [4, 4]);
+    gameboard.placeShipY(ship2, [4, 4]);
     gameboard.receiveAttack([4, 4]);
     gameboard.receiveAttack([4, 5]);
     expect(gameboard.checkIfAllShipsSunk()).toBe(true);
@@ -46,7 +46,7 @@ test('check that all ships are sunk', () => {
 test('check that not all ships are sunk', () => {
     const gameboard = new Gameboard();
     const ship2 = new Ship(2);
-    gameboard.placeShip(ship2, [4, 4]);
+    gameboard.placeShipY(ship2, [4, 4]);
     gameboard.receiveAttack([4, 4]);
     expect(gameboard.cells[4][5].shipPlaced).toBe(true);
     expect(gameboard.cells[4][5].isHit).toBe(false);

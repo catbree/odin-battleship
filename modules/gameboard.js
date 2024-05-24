@@ -3,7 +3,17 @@ export class Gameboard {
         this.cells = new Array(10).fill(0).map(() => new Array(10).fill(0).map(() => new Cell())); // using this to initialise 2d array of cells
     }
 
-    placeShip(ship, startCoord) {
+    placeShipX(ship, startCoord) {
+        const [startX, startY] = startCoord;  
+        if (startX <= (10 - ship.length)) {
+            for (let i=0; i < ship.length; i++) {
+                this.cells[startX + i][startY].shipPlaced = true;
+                this.cells[startX + i][startY].shipId = ship;
+            }
+        }
+    }
+
+    placeShipY(ship, startCoord) {
         const [startX, startY] = startCoord;  
         if (startY <= (10 - ship.length)) {
             for (let i=0; i < ship.length; i++) {

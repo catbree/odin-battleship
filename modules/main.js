@@ -12,17 +12,17 @@ export const p2Gameboard = document.querySelector(".gameboard-container.player2"
 
 
 //place ships for both players
-player1.gameboard.placeShip(new Ship(2), [5, 0]);
-player1.gameboard.placeShip(new Ship(2), [8, 3]);
-player1.gameboard.placeShip(new Ship(3), [6, 4]);
-player1.gameboard.placeShip(new Ship(4), [2, 6]);
-player1.gameboard.placeShip(new Ship(5), [0, 4]);
+player1.gameboard.placeShipY(new Ship(2), [5, 0]);
+player1.gameboard.placeShipX(new Ship(2), [1, 2]);
+player1.gameboard.placeShipY(new Ship(3), [6, 4]);
+player1.gameboard.placeShipY(new Ship(4), [2, 6]);
+player1.gameboard.placeShipY(new Ship(5), [0, 4]);
 
-player2.gameboard.placeShip(new Ship(2), [3, 0]);
-player2.gameboard.placeShip(new Ship(2), [8, 3]);
-player2.gameboard.placeShip(new Ship(3), [6, 4]);
-player2.gameboard.placeShip(new Ship(4), [2, 6]);
-player2.gameboard.placeShip(new Ship(5), [4, 4]);
+player2.gameboard.placeShipY(new Ship(2), [3, 0]);
+player2.gameboard.placeShipY(new Ship(2), [8, 3]);
+player2.gameboard.placeShipY(new Ship(3), [6, 4]);
+player2.gameboard.placeShipY(new Ship(4), [2, 6]);
+player2.gameboard.placeShipY(new Ship(5), [4, 4]);
 
 //initialise player1 as starting player
 let currentPlayer = player1;
